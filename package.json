@@ -1,0 +1,28 @@
+{
+  "name": "mern-videogames-e-commerce",
+  "version": "1.0.0",
+  "description": "Frontend, backend and data base design of an online store.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "feed_db": "node seed/seeder.js",
+    "deploy": "concurrently \"npm run server\" \"npm run client\"",
+    "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.21"
+  }
+}
